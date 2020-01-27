@@ -4,7 +4,7 @@ RESTful API demo that allow you to manage soccer teams and players.
 
 Used technologies: PHP, Slim 4, MySQL, PHPUnit, env var, Docker & Docker Compose.
 
-Made with: https://github.com/maurobonfietti/slim4-api-skeleton
+Made with [slim4-api-skeleton](https://github.com/maurobonfietti/slim4-api-skeleton).
 
 [![Software License][ico-license]](LICENSE.md)
 
@@ -15,19 +15,18 @@ Made with: https://github.com/maurobonfietti/slim4-api-skeleton
 
 ### Pre Requisite:
 
+- Git.
 - PHP.
 - Composer.
 - MySQL/MariaDB.
 
 
-### With Composer:
-
-You can create a new project running the following commands:
+### Clone with git:
 
 ```bash
-$ composer create-project maurobonfietti/slim4-api-skeleton [my-api-name]
-$ cd [my-api-name]
+$ git clone https://github.com/maurobonfietti/slim4-soccer-api-demo.git && cd slim4-soccer-api-demo
 $ cp .env.example .env
+$ composer install
 $ composer test
 $ composer start
 ```
@@ -100,9 +99,9 @@ $ docker-compose down
 
 - Get All: `GET /team`
 
-- Get One: `GET /team/{id}`
-
 - Create: `POST /team`
+
+- Get One: `GET /team/{id}`
 
 - Update: `PUT /team/{id}`
 
@@ -112,9 +111,9 @@ $ docker-compose down
 
 - Get All: `GET /player`
 
-- Get One: `GET /player/{id}`
-
 - Create: `POST /player`
+
+- Get One: `GET /player/{id}`
 
 - Update: `PUT /player/{id}`
 
