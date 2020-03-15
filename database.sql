@@ -87,7 +87,7 @@ INSERT INTO `team` (`id`, `name`, `stadium_name`, `capacity`)
 VALUES
 	(1,'Boca Juniors','Alberto J. Armando',50000),
 	(2,'River Plate','Antonio Vespucio Liberti',70000),
-	(3,'Newell's Old Boys','Marcelo Bielsa',42000),
+	(3,"Newell's Old Boys",'Marcelo Bielsa',42000),
 	(4,'Rosario Central','Gigante de Arroyito',43000),
 	(5,'Colón','Brigadier General Estanislao López',40000),
 	(6,'Unión','15 de Abril',26000),
@@ -100,7 +100,11 @@ VALUES
 	(13,'Racing','Presidente Perón',52000),
 	(14,'Vélez Sarsfield','José Amalfitani',49000),
 	(15,'San Lorenzo','Pedro Bidegain',48000),
-	(16,'Huracán','Tomás Adolfo Ducó',48000);
+	(16,'Huracán','Tomás Adolfo Ducó',48000),
+	(17,'Lanús','Ciudad de Lanús',47000),
+	(18,'Banfield','Florencio Sola',35000),
+	(19,'Defensa y Justicia','Norberto "Tito" Tomaghello',20000),
+	(20,'Nueva Chicago','Estadio Nueva Chicago',25000);
 
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
