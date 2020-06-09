@@ -7,9 +7,9 @@ namespace App\Service;
 use App\Exception\TeamException;
 use App\Repository\TeamRepository;
 
-class TeamService extends BaseService
+final class TeamService extends BaseService
 {
-    protected $teamRepository;
+    protected TeamRepository $teamRepository;
 
     public function __construct(TeamRepository $teamRepository)
     {
@@ -31,7 +31,7 @@ class TeamService extends BaseService
         return $this->checkAndGet($teamId);
     }
 
-    public function create($input)
+    public function create(array $input)
     {
         $team = json_decode(json_encode($input), false);
 
@@ -46,7 +46,7 @@ class TeamService extends BaseService
         return $this->teamRepository->update($team, $data);
     }
 
-    public function delete(int $teamId)
+    public function delete(int $teamId): void
     {
         $this->checkAndGet($teamId);
         $this->teamRepository->delete($teamId);

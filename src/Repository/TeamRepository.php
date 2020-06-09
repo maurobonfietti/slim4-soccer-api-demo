@@ -6,7 +6,7 @@ namespace App\Repository;
 
 use App\Exception\TeamException;
 
-class TeamRepository extends BaseRepository
+final class TeamRepository extends BaseRepository
 {
     public function __construct(\PDO $database)
     {
@@ -36,7 +36,7 @@ class TeamRepository extends BaseRepository
         return $statement->fetchAll();
     }
 
-    public function create($team)
+    public function create(object $team)
     {
         $query = 'INSERT INTO `team` (`id`, `name`, `stadium_name`, `capacity`) VALUES (:id, :name, :stadium_name, :capacity)';
         $statement = $this->getDb()->prepare($query);
@@ -49,7 +49,7 @@ class TeamRepository extends BaseRepository
         return $this->checkAndGet((int) $this->getDb()->lastInsertId());
     }
 
-    public function update($team, $data)
+    public function update(object $team, object $data)
     {
         if (isset($data->name)) { $team->name = $data->name; }
         if (isset($data->stadium_name)) { $team->stadium_name = $data->stadium_name; }
@@ -66,7 +66,7 @@ class TeamRepository extends BaseRepository
         return $this->checkAndGet((int) $team->id);
     }
 
-    public function delete(int $teamId)
+    public function delete(int $teamId): void
     {
         $query = 'DELETE FROM `team` WHERE `id` = :id';
         $statement = $this->getDb()->prepare($query);

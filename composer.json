@@ -23,16 +23,18 @@
     "require": {
         "pimple/pimple": "^3.2",
         "slim/psr7": "^0.5.0",
-        "slim/slim": "^4.4",
+        "slim/slim": "^4.5",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
         "maurobonfietti/skel-api-slim-php-crud-generator": "dev-master",
-        "phpunit/phpunit": "^8.0",
-        "symfony/console": "^3.3"
+        "nunomaduro/phpinsights": "dev-master",
+        "phpunit/phpunit": "^9.0",
+        "symfony/console": "^4.4"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "process-timeout": 0
     },
     "autoload": {
         "psr-4": {
@@ -42,14 +44,15 @@
     },
     "minimum-stability": "dev",
     "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"copy('.env.example', '.env');\"",
+            "php post-create-project-command.php"
+        ],
         "coverage": "phpunit --coverage-text --coverage-html coverage",
         "crud": "php console api:generate:endpoints",
         "down": "docker-compose down",
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit",
-        "up": "docker-compose up -d --build",
-        "post-create-project-cmd": [
-            "php -r \"copy('.env.example', '.env');\""
-        ]
+        "up": "docker-compose up -d --build"
     }
 }

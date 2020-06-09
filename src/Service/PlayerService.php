@@ -7,9 +7,9 @@ namespace App\Service;
 use App\Exception\PlayerException;
 use App\Repository\PlayerRepository;
 
-class PlayerService extends BaseService
+final class PlayerService extends BaseService
 {
-    protected $playerRepository;
+    protected PlayerRepository $playerRepository;
 
     public function __construct(PlayerRepository $playerRepository)
     {
@@ -31,7 +31,7 @@ class PlayerService extends BaseService
         return $this->checkAndGet($playerId);
     }
 
-    public function create($input)
+    public function create(array $input)
     {
         $player = json_decode(json_encode($input), false);
 
@@ -46,7 +46,7 @@ class PlayerService extends BaseService
         return $this->playerRepository->update($player, $data);
     }
 
-    public function delete(int $playerId)
+    public function delete(int $playerId): void
     {
         $this->checkAndGet($playerId);
         $this->playerRepository->delete($playerId);

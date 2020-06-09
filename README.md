@@ -1,15 +1,20 @@
-# SLIM 4 - API SKELETON
+# SLIM 4 - SOCCER API - DEMO
 
-Useful skeleton for RESTful API development, using [Slim PHP micro framework](https://www.slimframework.com).
+RESTful API demo that allow you to manage soccer teams and players.
 
-Used technologies: `PHP, Slim 4, MySQL, PHPUnit, env var, Docker & Docker Compose`.
+Used technologies: `PHP 7, Slim 4, MySQL, PHPUnit, dotenv, Docker & Docker Compose`.
+
+Made with [slim4-api-skeleton](https://github.com/maurobonfietti/slim4-api-skeleton).
 
 [![Software License][ico-license]](LICENSE.md)
+[![Build Status](https://travis-ci.com/maurobonfietti/slim4-api-skeleton.svg?branch=master)](https://travis-ci.com/maurobonfietti/slim4-api-skeleton)
+[![Coverage Status](https://coveralls.io/repos/github/maurobonfietti/slim4-api-skeleton/badge.svg?branch=master)](https://coveralls.io/github/maurobonfietti/slim4-api-skeleton?branch=master)
+[![Packagist Version](https://img.shields.io/packagist/v/maurobonfietti/slim4-api-skeleton)](https://packagist.org/packages/maurobonfietti/slim4-api-skeleton)
 
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat
 
 
-## QUICK INSTALL:
+## :gear: QUICK INSTALL:
 
 ### Pre Requisite:
 
@@ -34,7 +39,7 @@ $ composer start
 
 By default, the API use a MySQL Database.
 
-You can check and edit this configuration in your `.env` file:
+You should check and edit this configuration in your `.env` file:
 
 ```
 DB_HOST='127.0.0.1'
@@ -44,18 +49,18 @@ DB_PASS='yourMySqlPassword'
 ```
 
 
-## DOCKER READY:
+### With Docker:
 
 If you like Docker, you can use this project with **docker** and **docker-compose**.
 
 
-### MINIMAL DOCKER VERSION:
+**Minimal Docker Version:**
 
 * Engine: 18.03+
 * Compose: 1.21+
 
 
-### DOCKER COMMANDS:
+**Docker Commands:**
 
 ```bash
 # Create and start containers for the API.
@@ -69,7 +74,7 @@ $ docker-compose down
 ```
 
 
-## DEPENDENCIES:
+## :inbox_tray: DEPENDENCIES:
 
 ### LIST OF REQUIRE DEPENDENCIES:
 
@@ -82,25 +87,26 @@ $ docker-compose down
 
 - [phpunit/phpunit](https://github.com/sebastianbergmann/phpunit): The PHP Unit Testing framework.
 - [symfony/console](https://github.com/symfony/console): The Console component eases the creation of beautiful and testable command line interfaces.
+- [nunomaduro/phpinsights](https://github.com/nunomaduro/phpinsights): Instant PHP quality checks from your console.
 - [maurobonfietti/slim4-api-skeleton-crud-generator](https://github.com/maurobonfietti/slim4-api-skeleton-crud-generator): CRUD Generator for Slim 4 - Api Skeleton.
 
 
-## DOCUMENTATION:
+## :bookmark: ENDPOINTS:
 
-### DEFAULT ENDPOINTS:
+### BY DEFAULT:
 
 - Help: `GET /`
 
 - Status: `GET /status`
 
 
-## BUY ME A COFFEE :-)
+## :heart: WOULD YOU LIKE TO SUPPORT THIS PROJECT?
 
-<a href='https://ko-fi.com/maurobonfietti' target='_blank'>
-  <img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' />
-</a>
+You can support this project inviting me a coffee :coffee: :yum: or giving a **star** to this repo :star: :blush:.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/maurobonfietti)
 
 
-## That's it!
+## :sunglasses: THAT'S IT!
 
 Now go build a cool RESTful API ;-)

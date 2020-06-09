@@ -5,14 +5,15 @@ declare(strict_types=1);
 namespace App\Controller\Player;
 
 use App\Service\PlayerService;
+use Pimple\Psr11\Container;
 
 abstract class Base
 {
-    protected $container;
+    protected Container $container;
 
-    protected $playerService;
+    protected PlayerService $playerService;
 
-    public function __construct($container)
+    public function __construct(Container $container)
     {
         $this->container = $container;
     }

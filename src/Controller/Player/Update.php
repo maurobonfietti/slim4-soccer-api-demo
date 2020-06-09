@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace App\Controller\Player;
 
-class Update extends Base
+use App\Lib\JsonResponse;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+final class Update extends Base
 {
-    public function __invoke($request, $response, array $args)
+    public function __invoke(Request $request, Response $response, array $args): Response
     {
         $input = $request->getParsedBody();
         $player = $this->getPlayerService()->update($input, (int) $args['id']);
 
-        $payload = json_encode($player);
-        $response->getBody()->write($payload);
-        return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+        return JsonResponse::withJson($response, json_encode($player));
     }
 }

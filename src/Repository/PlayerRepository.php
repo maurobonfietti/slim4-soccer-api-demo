@@ -6,7 +6,7 @@ namespace App\Repository;
 
 use App\Exception\PlayerException;
 
-class PlayerRepository extends BaseRepository
+final class PlayerRepository extends BaseRepository
 {
     public function __construct(\PDO $database)
     {
@@ -36,7 +36,7 @@ class PlayerRepository extends BaseRepository
         return $statement->fetchAll();
     }
 
-    public function create($player)
+    public function create(object $player)
     {
         $query = 'INSERT INTO `player` (`id`, `name`) VALUES (:id, :name)';
         $statement = $this->getDb()->prepare($query);
@@ -47,7 +47,7 @@ class PlayerRepository extends BaseRepository
         return $this->checkAndGet((int) $this->getDb()->lastInsertId());
     }
 
-    public function update($player, $data)
+    public function update(object $player, object $data)
     {
         if (isset($data->name)) { $player->name = $data->name; }
 
@@ -60,7 +60,7 @@ class PlayerRepository extends BaseRepository
         return $this->checkAndGet((int) $player->id);
     }
 
-    public function delete(int $playerId)
+    public function delete(int $playerId): void
     {
         $query = 'DELETE FROM `player` WHERE `id` = :id';
         $statement = $this->getDb()->prepare($query);

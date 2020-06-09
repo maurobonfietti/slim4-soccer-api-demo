@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace App\Controller\Team;
 
-class GetOne extends Base
+use App\Lib\JsonResponse;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+
+final class GetOne extends Base
 {
-    public function __invoke($request, $response, array $args)
+    public function __invoke(Request $request, Response $response, array $args): Response
     {
         $team = $this->getTeamService()->getOne((int) $args['id']);
 
-        $payload = json_encode($team);
-        $response->getBody()->write($payload);
-        return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
+        return JsonResponse::withJson($response, json_encode($team));
     }
 }
