@@ -1,8 +1,10 @@
-# SLIM 4 - API SKELETON
+# SLIM 4 - SOCCER API - DEMO
 
-Useful skeleton for RESTful API development, using [Slim PHP micro framework](https://www.slimframework.com).
+RESTful API demo that allow you to manage soccer teams and players.
 
 Used technologies: `PHP 7, Slim 4, MySQL, PHPUnit, dotenv, Docker & Docker Compose`.
+
+Made with [slim4-api-skeleton](https://github.com/maurobonfietti/slim4-api-skeleton).
 
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status](https://travis-ci.com/maurobonfietti/slim4-api-skeleton.svg?branch=master)](https://travis-ci.com/maurobonfietti/slim4-api-skeleton)
@@ -98,6 +100,30 @@ $ docker-compose down
 - Hello: `GET /`
 
 - Health Check: `GET /status`
+
+### TEAMS:
+
+- Get All: `GET /team`
+
+- Create: `POST /team`
+
+- Get One: `GET /team/{id}`
+
+- Update: `PUT /team/{id}`
+
+- Delete: `DELETE /team/{id}`
+
+### PLAYERS:
+
+- Get All: `GET /player`
+
+- Create: `POST /player`
+
+- Get One: `GET /player/{id}`
+
+- Update: `PUT /player/{id}`
+
+- Delete: `DELETE /player/{id}`
 
 
 ## :video_camera: TUTORIAL:
